@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Autocompletable</title>
+</head>
+<body>
+
+    <h2>Días de la semana</h2>
+
+    <form>
+        <label for="dia">Selecciona un día:</label>
+
+        <input type="text" id="dia" name="dia" list="dias" autocomplete="on">
+
+        <datalist id="dias">
+            <option value="Lunes">
+            <option value="Martes">
+            <option value="Miércoles">
+            <option value="Jueves">
+            <option value="Viernes">
+            <option value="Sábado">
+            <option value="Domingo">
+        </datalist>
+
+        <br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+    <p><a href="../index.html">&#8592; Volver a selección de Ejemplos</a></p>
+</body>
+</html>
