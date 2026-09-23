@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+<!-- Fig. 4.6: avanzada.html -->
+<!-- Herencia en hojas de estilo. -->
+
+<head>
+    <meta charset="utf-8">
+    <title>Más estilos</title>
+
+    <style type="text/css">
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a.nodec {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        h1, em {
+            font-weight: bold;
+        }
+
+        ul {
+            text-decoration: underline;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        ul ul {
+            font-size: .8em;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Lista de compras para el lunes:</h1>
+
+    <ul>
+        <li>Leche</li>
+
+        <li>
+            Pan
+            <ul>
+                <li>Pan blanco</li>
+                <li>Pan de centeno</li>
+                <li>Pan de trigo entero</li>
+            </ul>
+        </li>
+
+        <li>Zanahoria</li>
+        <li>Yogurt</li>
+        <li>Pizza <em>con champiñones</em></li>
+    </ul>
+
+    <p>
+        <em>Ir a la</em>
+        <a class="nodec" href="http://www.deitel.com">
+            Tienda de abarrotes
+        </a>
+    </p>
+<p><a href="../index.html">&#8592; Volver a selección de Ejemplos</a></p>
+</body>
+</html>
