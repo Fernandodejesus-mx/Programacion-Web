@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Fusionar imágenes</title>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding: 30px;
+}
+#galeria {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 0 auto;
+}
+#galeria img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 400px;
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: 3s;
+  transition-timing-function: linear;
+}
+#img1 { z-index: 5; }
+#img2 { z-index: 4; }
+#img3 { z-index: 3; }
+#img4 { z-index: 2; }
+#img5 { z-index: 1; }
+
+#galeria:hover #img1 { opacity: 0; transition-delay: 0s; }
+#galeria:hover #img2 { opacity: 0; transition-delay: 3s; }
+#galeria:hover #img3 { opacity: 0; transition-delay: 6s; }
+#galeria:hover #img4 { opacity: 0; transition-delay: 9s; }
+</style>
+</head>
+<body>
+<h1>Pasa el mouse sobre la imagen</h1>
+<div id="galeria">
+  <img id="img1" src="imagenes/amanecer.png" alt="Foto 1">
+  <img id="img2" src="imagenes/dia.png" alt="Foto 2">
+  <img id="img3" src="imagenes/anochecer.png" alt="Foto 3">
+  <img id="img4" src="imagenes/noche.png" alt="Foto 4">
+  <img id="img5" src="imagenes/boom.png" alt="Foto 5">
+</div>
+<p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p>
+</body>
+</html>
