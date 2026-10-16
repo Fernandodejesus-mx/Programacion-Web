@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+   <meta charset="utf-8">
+   <title>Los dos números mayores</title>
+   <script>
+
+
+      var contador = 2;   // cuenta cuántos números se han introducido
+      var numero;         // el entero más reciente introducido por el usuario
+      var primero;        // primer número introducido
+      var segundo;        // segundo número introducido
+      var mayor;          // el número más grande encontrado hasta ahora
+      var segundoMayor;   // el segundo más grande encontrado hasta ahora
+
+      // pedir los dos primeros números y ordenarlos
+      primero = parseInt(
+         window.prompt( "Escriba el número 1:", "0" ) );
+      segundo = parseInt(
+         window.prompt( "Escriba el número 2:", "0" ) );
+
+      if ( primero > segundo )
+      {
+         mayor = primero;
+         segundoMayor = segundo;
+      }
+      else
+      {
+         mayor = segundo;
+         segundoMayor = primero;
+      }
+
+      // procesar los 8 números restantes
+      while ( contador < 10 )
+      {
+         contador = contador + 1;
+
+         numero = parseInt(
+            window.prompt( "Escriba el número " + contador + ":", "0" ) );
+
+         if ( numero > mayor )
+         {
+            segundoMayor = mayor; // el mayor anterior pasa a ser el segundo
+            mayor = numero;
+         }
+         else if ( numero > segundoMayor )
+            segundoMayor = numero;
+      } // fin de while
+
+      document.writeln( "<h1>Los dos números más grandes</h1>" );
+      document.writeln( "<p>El mayor es " + mayor + "</p>" );
+      document.writeln( "<p>El segundo mayor es " + segundoMayor + "</p>" );
+
+   </script>
+</head>
+<body><p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p></body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+   <meta charset="utf-8">
+   <title>Límite de crédito</title>
+   <script>
+
+
+      var cuenta;       // número de cuenta
+      var saldoInicial; // saldo al inicio del mes
+      var cargos;       // total de artículos cargados en el mes
+      var creditos;     // total de créditos aplicados en el mes
+      var limite;       // límite de crédito permitido
+      var nuevoSaldo;   // saldo calculado
+
+      document.writeln( "<h1>Límite de crédito</h1>" );
+
+      cuenta = parseInt(
+         window.prompt( "Número de cuenta (-1 para salir):", "0" ) );
+
+      while ( cuenta != -1 )
+      {
+         saldoInicial = parseInt(
+            window.prompt( "Saldo al inicio del mes:", "0" ) );
+         cargos = parseInt(
+            window.prompt( "Total de artículos cargados en el mes:", "0" ) );
+         creditos = parseInt(
+            window.prompt( "Total de créditos aplicados en el mes:", "0" ) );
+         limite = parseInt(
+            window.prompt( "Límite de crédito permitido:", "0" ) );
+
+         nuevoSaldo = saldoInicial + cargos - creditos;
+
+         document.writeln( "<p>Cuenta " + cuenta +
+            ": nuevo saldo = " + nuevoSaldo +
+            " (límite: " + limite + ")</p>" );
+
+         if ( nuevoSaldo > limite )
+            document.writeln(
+               "<p><strong>Se excedió el límite de su crédito</strong></p>" );
+
+         cuenta = parseInt(
+            window.prompt( "Número de cuenta (-1 para salir):", "0" ) );
+      } // fin de while
+
+   </script>
+</head>
+<body><p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p></body>
+</html>

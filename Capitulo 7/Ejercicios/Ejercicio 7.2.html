@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Ejercicio 7.2: sumar 1 a una variable</title>
+   <style>
+      body {
+         font-family: Georgia, "Times New Roman", serif;
+         max-width: 42rem;
+         margin: 2rem auto;
+         padding: 0 1rem;
+         line-height: 1.7;
+         color: #1d2430;
+         background: #fdfdfb;
+      }
+      h1 { font-size: 1.6rem; margin-bottom: 0.25rem; }
+      p.intro { color: #5a6270; margin-top: 0; }
+      code {
+         font-family: Consolas, "Courier New", monospace;
+         font-weight: bold;
+         color: #0b5c8a;
+         background: #eef3f7;
+         padding: 0.1rem 0.4rem;
+         border-radius: 3px;
+      }
+      li { margin-bottom: 0.6rem; }
+   </style>
+</head>
+<body>
+   <h1>Ejercicio 7.2</h1>
+   <p class="intro">
+      Cuatro instrucciones de JavaScript que suman 1 a la variable
+      <code>x</code>, que contiene un número.
+   </p>
+
+   <ol>
+      <li><code>x = x + 1;</code> (asignación normal)</li>
+      <li><code>x += 1;</code> (operador de asignación de suma)</li>
+      <li><code>++x;</code> (preincremento)</li>
+      <li><code>x++;</code> (postincremento)</li>
+   </ol>
+
+   <h2>Comprobación</h2>
+   <script>
+      var x;
+
+      x = 5; x = x + 1;
+      document.writeln( "<p>x = x + 1; &rarr; " + x + "</p>" );
+
+      x = 5; x += 1;
+      document.writeln( "<p>x += 1; &rarr; " + x + "</p>" );
+
+      x = 5; ++x;
+      document.writeln( "<p>++x; &rarr; " + x + "</p>" );
+
+      x = 5; x++;
+      document.writeln( "<p>x++; &rarr; " + x + "</p>" );
+   </script>
+   <p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p>
+</body>
+</html>

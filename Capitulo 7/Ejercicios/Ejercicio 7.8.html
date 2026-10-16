@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Ejercicio 7.8: error en la instrucción while</title>
+   <style>
+      body {
+         font-family: Georgia, "Times New Roman", serif;
+         max-width: 42rem;
+         margin: 2rem auto;
+         padding: 0 1rem;
+         line-height: 1.7;
+         color: #1d2430;
+         background: #fdfdfb;
+      }
+      h1 { font-size: 1.6rem; margin-bottom: 0.25rem; }
+      p.intro { margin-top: 0; }
+      code, pre {
+         font-family: Consolas, "Courier New", monospace;
+         font-weight: bold;
+         color: #0b5c8a;
+      }
+      pre { margin: 0.5rem 0; }
+   </style>
+</head>
+<body>
+   <h1>7.8</h1>
+   <p class="intro">
+      ¿Qué está mal en la siguiente instrucción de repetición
+      <code>while</code>?
+   </p>
+
+<pre>while ( z &gt; 0 )
+   suma += z;</pre>
+
+   <p>
+      El valor de la variable <code>z</code> nunca se cambia en el cuerpo de la
+      instrucción <code>while</code>. Por lo tanto, si la condición de
+      continuación de ciclo (<code>z &gt; 0</code>) es verdadera, se crea un
+      ciclo infinito. Para evitar que ocurra un ciclo infinito, <code>z</code>
+      debe decrementarse de manera que en un momento dado se vuelva menor que 0.
+   </p>
+   <p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p>
+</body>
+</html>

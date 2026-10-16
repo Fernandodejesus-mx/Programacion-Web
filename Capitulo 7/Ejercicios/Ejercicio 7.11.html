@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+   <meta charset="utf-8">
+   <title>Kilómetros por litro</title>
+   <script>
+
+      
+
+      var totalKilometros = 0; // kilómetros de todos los viajes
+      var totalLitros = 0;     // litros de todos los viajes
+      var viaje = 0;           // número de viaje
+      var kilometros;          // kilómetros del viaje actual
+      var litros;              // litros del viaje actual
+      var kmPorLitro;          // rendimiento del viaje actual
+
+      document.writeln( "<h1>Kilómetros por litro</h1>" );
+
+      // pedir los kilómetros del primer viaje
+      kilometros = parseFloat(
+         window.prompt( "Kilómetros conducidos (-1 para salir):", "0" ) );
+
+      while ( kilometros != -1 )
+      {
+         litros = parseFloat(
+            window.prompt( "Litros usados en este viaje:", "0" ) );
+
+         viaje = viaje + 1;
+         kmPorLitro = kilometros / litros;
+
+         document.writeln( "<p>Viaje " + viaje + ": " + kilometros +
+            " km con " + litros + " litros = " +
+            kmPorLitro.toFixed( 2 ) + " km/litro</p>" );
+
+         totalKilometros = totalKilometros + kilometros;
+         totalLitros = totalLitros + litros;
+
+         // pedir los kilómetros del siguiente viaje
+         kilometros = parseFloat(
+            window.prompt( "Kilómetros conducidos (-1 para salir):", "0" ) );
+      } // fin de while
+
+      if ( viaje != 0 )
+         document.writeln( "<h2>Total: " +
+            ( totalKilometros / totalLitros ).toFixed( 2 ) +
+            " km/litro en todos los reabastecimientos</h2>" );
+      else
+         document.writeln( "<p>No se registraron viajes</p>" );
+
+   </script>
+</head>
+<body><p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p></body>
+</html>

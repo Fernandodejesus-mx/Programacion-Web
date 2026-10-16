@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Ejercicio 7.10: secuencia de comandos misteriosa</title>
+   <style>
+      body {
+         font-family: Georgia, "Times New Roman", serif;
+         max-width: 42rem;
+         margin: 2rem auto;
+         padding: 0 1rem;
+         line-height: 1.7;
+         color: #1d2430;
+         background: #fdfdfb;
+      }
+      h1 { font-size: 1.6rem; margin-bottom: 0.25rem; }
+      p.intro { margin-top: 0; }
+      code, pre {
+         font-family: Consolas, "Courier New", monospace;
+         font-weight: bold;
+         color: #0b5c8a;
+      }
+      pre { margin: 0.5rem 0; }
+   </style>
+</head>
+<body>
+   <h1>7.10</h1>
+   <p class="intro">
+      Sin ejecutarla, determine lo que imprime esta secuencia de comandos:
+   </p>
+
+<pre>var y;
+var x = 1;
+var total = 0;
+
+while ( x &lt;= 10 )
+{
+   y = x * x;
+   document.writeln( "&lt;p&gt;" + y + "&lt;/p&gt;" );
+   total += y;
+   ++x;
+} // fin de while
+
+document.writeln( "&lt;p&gt;El total es " + total + "&lt;/p&gt;" );</pre>
+
+   <p>
+      La secuencia de comandos imprime el cuadrado de cada entero del 1 al 10,
+      cada uno en su propio párrafo, y al final imprime la suma de todos esos
+      cuadrados:
+   </p>
+
+<pre>1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+El total es 385</pre>
+<p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p>
+</body>
+</html>

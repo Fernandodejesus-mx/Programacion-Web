@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Ejercicio 7.7: identificar y corregir errores</title>
+   <style>
+      body {
+         font-family: Georgia, "Times New Roman", serif;
+         max-width: 42rem;
+         margin: 2rem auto;
+         padding: 0 1rem;
+         line-height: 1.7;
+         color: #1d2430;
+         background: #fdfdfb;
+      }
+
+      h1 {
+         font-size: 1.6rem;
+         margin-bottom: 0.25rem;
+      }
+
+      p.intro {
+         margin-top: 0;
+      }
+
+      code,
+      pre {
+         font-family: Consolas, "Courier New", monospace;
+         font-weight: bold;
+         color: #0b5c8a;
+      }
+
+      pre {
+         margin: 0.5rem 0;
+      }
+
+      li {
+         margin-bottom: 1.5rem;
+      }
+   </style>
+</head>
+
+<body>
+   <h1>7.7</h1>
+   <p class="intro">
+      Identifique y corrija los errores en cada uno de los siguientes
+      segmentos de código:
+   </p>
+
+   <ol type="a">
+      <li>
+         <pre>while ( c &lt;= 5 ) {
+   producto *= c;
+   ++c;</pre>
+         <strong>Error:</strong> falta la llave derecha de cierre del cuerpo
+         de la instrucción <code>while</code>.<br>
+         <strong>Corrección:</strong> agregar una llave derecha de cierre
+         después de la instrucción <code>++c;</code>.
+         <pre>while ( c &lt;= 5 ) {
+   producto *= c;
+   ++c;
+}</pre>
+      </li>
+
+      <li>
+         <pre>if ( genero == 1 )
+   document.writeln( "Mujer" );
+else;
+   document.writeln( "Hombre" );</pre>
+         <strong>Error:</strong> el <code>;</code> después de
+         <code>else</code> produce un error lógico. La segunda instrucción de
+         salida siempre se ejecutará.<br>
+         <strong>Corrección:</strong> quitar el punto y coma después de
+         <code>else</code>.
+         <pre>if ( genero == 1 )
+   document.writeln( "Mujer" );
+else
+   document.writeln( "Hombre" );</pre>
+      </li>
+   </ol>
+   <p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+   <meta charset="utf-8">
+   <title>Cifrar un entero de cuatro dígitos</title>
+   <script>
+
+
+      var numero; // número introducido por el usuario
+      var d1, d2, d3, d4; // los cuatro dígitos
+
+      numero = parseInt(
+         window.prompt( "Escriba un entero de cuatro dígitos:", "0" ) );
+
+      while ( !( numero >= 0 && numero <= 9999 ) )
+      {
+         window.alert( "Debe escribir un entero de cuatro dígitos." );
+         numero = parseInt(
+            window.prompt( "Escriba un entero de cuatro dígitos:", "0" ) );
+      } // fin de while
+
+      // separar los dígitos
+      d1 = Math.floor( numero / 1000 );
+      d2 = Math.floor( numero / 100 ) % 10;
+      d3 = Math.floor( numero / 10 ) % 10;
+      d4 = numero % 10;
+
+      // reemplazar cada dígito con ( dígito + 7 ) módulo 10
+      d1 = ( d1 + 7 ) % 10;
+      d2 = ( d2 + 7 ) % 10;
+      d3 = ( d3 + 7 ) % 10;
+      d4 = ( d4 + 7 ) % 10;
+
+      // intercambiar 1.º con 3.º y 2.º con 4.º: el nuevo orden es d3, d4, d1, d2
+      document.writeln( "<h1>Número cifrado: " + d3 + d4 + d1 + d2 + "</h1>" );
+
+   </script>
+</head>
+<body><p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p></body>
+</html>
