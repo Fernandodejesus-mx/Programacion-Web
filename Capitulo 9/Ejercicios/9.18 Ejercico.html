@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.18: minimo3.html -->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ejercicio 9.18</title>
+<style>body{font-family:Arial,sans-serif;max-width:700px;margin:30px auto;padding:0 16px}</style>
+<script>
+  function minimo3(a, b, c) {
+    return Math.min(a, Math.min(b, c));
+  }
+
+  function iniciar() {
+    document.getElementById("boton").addEventListener("click", function () {
+      var a = parseFloat(document.getElementById("num1").value);
+      var b = parseFloat(document.getElementById("num2").value);
+      var c = parseFloat(document.getElementById("num3").value);
+      document.getElementById("resultado").innerHTML = "El valor más pequeño es: " + minimo3(a, b, c);
+    }, false);
+  }
+
+  window.addEventListener("load", iniciar, false);
+</script>
+</head>
+<body>
+  <h2>9.18 Mínimo de tres números</h2>
+  <form action="#">
+    <p><label>Valor 1: <input id="num1" type="number" step="any"></label></p>
+    <p><label>Valor 2: <input id="num2" type="number" step="any"></label></p>
+    <p><label>Valor 3: <input id="num3" type="number" step="any"></label></p>
+    <p><input id="boton" type="button" value="Calcular mínimo"></p>
+  </form>
+  <p id="resultado"></p>
+  <p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p>
+</body>
+</html>

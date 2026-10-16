@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.8: estacionamiento.html -->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ejercicio 9.8</title>
+<style>body{font-family:Arial,sans-serif;max-width:700px;margin:30px auto;padding:0 16px}</style>
+<script>
+  var totalRecibos = 0;
+
+  function iniciar() {
+    document.getElementById("botonCalcular").addEventListener("click", mostrarCargos, false);
+  }
+
+  function mostrarCargos() {
+    var horas = parseFloat(document.getElementById("campoHoras").value);
+
+    if (isNaN(horas) || horas <= 0 || horas > 24) {
+      alert("Introduzca un número de horas entre 0 y 24.");
+      return;
+    }
+
+    var cargo = calcularCargos(horas);
+    totalRecibos += cargo;
+
+    document.getElementById("cargoActual").innerHTML =
+      "Cargo del cliente actual (" + horas + " h): $" + cargo.toFixed(2);
+    document.getElementById("total").innerHTML =
+      "Total corriente de los recibos de ayer: $" + totalRecibos.toFixed(2);
+  }
+
+  function calcularCargos(horas) {
+    var cargo = 2.00;                       // cuota mínima hasta 3 horas
+    if (horas > 3) {
+      cargo += 0.50 * Math.ceil(horas - 3); // $0.50 por hora o fracción adicional
+    }
+    if (cargo > 10.00) {
+      cargo = 10.00;                        // cargo máximo por 24 horas
+    }
+    return cargo;
+  }
+
+  window.addEventListener("load", iniciar, false);
+</script>
+</head>
+<body>
+  <h2>9.8 Cargos de estacionamiento</h2>
+  <form action="#">
+    <p><label>Horas estacionado: <input id="campoHoras" type="number" step="any"></label>
+    <input id="botonCalcular" type="button" value="Calcular"></p>
+  </form>
+  <p id="cargoActual"></p>
+  <p id="total"></p>
+  <p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p>
+</body>
+</html>

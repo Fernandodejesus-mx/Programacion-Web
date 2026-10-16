@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.11: rangos.html -->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ejercicio 9.11</title>
+<style>
+  body{font-family:Arial,sans-serif;max-width:700px;margin:30px auto;padding:0 16px}
+  table{border-collapse:collapse;width:100%}
+  td,th{border:1px solid #ccc;padding:6px 10px;text-align:left}
+  code{font-family:Consolas,monospace}
+</style>
+<script>
+  function generar() {
+    var n;
+    var filas = "";
+    var casos = [
+      ["a) 1 ≤ n ≤ 2",       "n = Math.floor( 1 + Math.random() * 2 );",     function(){ return Math.floor( 1 + Math.random() * 2 ); }],
+      ["b) 1 ≤ n ≤ 100",     "n = Math.floor( 1 + Math.random() * 100 );",   function(){ return Math.floor( 1 + Math.random() * 100 ); }],
+      ["c) 0 ≤ n ≤ 9",       "n = Math.floor( Math.random() * 10 );",        function(){ return Math.floor( Math.random() * 10 ); }],
+      ["d) 1000 ≤ n ≤ 1112", "n = Math.floor( 1000 + Math.random() * 113 );", function(){ return Math.floor( 1000 + Math.random() * 113 ); }],
+      ["e) -1 ≤ n ≤ 1",      "n = Math.floor( -1 + Math.random() * 3 );",    function(){ return Math.floor( -1 + Math.random() * 3 ); }],
+      ["f) -3 ≤ n ≤ 11",     "n = Math.floor( -3 + Math.random() * 15 );",   function(){ return Math.floor( -3 + Math.random() * 15 ); }]
+    ];
+
+    for (var i = 0; i < casos.length; i++) {
+      n = casos[i][2]();
+      filas += "<tr><td>" + casos[i][0] + "</td><td><code>" + casos[i][1] +
+               "</code></td><td>" + n + "</td></tr>";
+    }
+    document.getElementById("cuerpo").innerHTML = filas;
+  }
+
+  window.addEventListener("load", function () {
+    generar();
+    document.getElementById("boton").addEventListener("click", generar, false);
+  }, false);
+</script>
+</head>
+<body>
+  <h2>9.11 Enteros aleatorios en rangos</h2>
+  <table>
+    <thead><tr><th>Rango</th><th>Instrucción</th><th>n</th></tr></thead>
+    <tbody id="cuerpo"></tbody>
+  </table>
+  <p><input id="boton" type="button" value="Generar de nuevo"></p>
+  <p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.23: cai.html -->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ejercicio 9.23</title>
+<style>body{font-family:Arial,sans-serif;max-width:700px;margin:30px auto;padding:0 16px}</style>
+<script>
+  var a, b;
+
+  function nuevaPregunta() {
+    a = 1 + Math.floor(Math.random() * 9);
+    b = 1 + Math.floor(Math.random() * 9);
+    document.getElementById("pregunta").innerHTML = "¿Cuánto es " + a + " por " + b + "?";
+    document.getElementById("respuesta").value = "";
+  }
+
+  function mensajeCorrecto() {
+    switch (1 + Math.floor(Math.random() * 4)) {
+      case 1: return "Muy bien.";
+      case 2: return "Excelente.";
+      case 3: return "Buen trabajo.";
+      case 4: return "Siga así.";
+    }
+  }
+
+  function mensajeIncorrecto() {
+    switch (1 + Math.floor(Math.random() * 4)) {
+      case 1: return "No. Intente de nuevo";
+      case 2: return "Equivocado. Trate una vez más.";
+      case 3: return "No se dé por vencido.";
+      case 4: return "No. Siga intentando.";
+    }
+  }
+
+  function verificar() {
+    var respuesta = parseInt(document.getElementById("respuesta").value);
+    if (respuesta === a * b) {
+      document.getElementById("mensaje").innerHTML = mensajeCorrecto();
+      nuevaPregunta();
+    } else {
+      document.getElementById("mensaje").innerHTML = mensajeIncorrecto();
+      document.getElementById("respuesta").value = "";
+    }
+  }
+
+  function iniciar() {
+    document.getElementById("boton").addEventListener("click", verificar, false);
+    nuevaPregunta();
+  }
+
+  window.addEventListener("load", iniciar, false);
+</script>
+</head>
+<body>
+  <h2>9.23 Instrucción asistida por computadora</h2>
+  <p id="pregunta"></p>
+  <form action="#">
+    <p><input id="respuesta" type="number">
+    <input id="boton" type="button" value="Responder"></p>
+  </form>
+  <p id="mensaje"></p>
+  <p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p>
+</body>
+</html>

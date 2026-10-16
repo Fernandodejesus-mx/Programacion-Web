@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.26: adivinar2.html -->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ejercicio 9.26</title>
+<style>body{font-family:Arial,sans-serif;max-width:700px;margin:30px auto;padding:0 16px}</style>
+<script>
+  var secreto;
+  var intentos;
+
+  function nuevoJuego() {
+    secreto = 1 + Math.floor(Math.random() * 1000);
+    intentos = 0;
+  }
+
+  function enviar() {
+    var campo = document.getElementById("intento");
+    var intento = parseInt(campo.value);
+    var mensaje;
+
+    if (isNaN(intento)) {
+      document.getElementById("mensaje").innerHTML = "Introduzca un número.";
+      return;
+    }
+
+    intentos++;
+
+    if (intento > secreto) {
+      mensaje = "Demasiado alto. Intente de nuevo.";
+    } else if (intento < secreto) {
+      mensaje = "Demasiado bajo. Intente de nuevo.";
+    } else {
+      mensaje = "Felicidades. ¡Adivinó el número! Intentos: " + intentos + "<br>";
+      if (intentos < 10) {
+        mensaje += "¡Conoce el secreto o tuvo suerte!";
+      } else if (intentos === 10) {
+        mensaje += "¡Entonces sí conoce el secreto!";
+      } else {
+        mensaje += "¡Debería poder hacerlo mejor!";
+      }
+      nuevoJuego();
+    }
+
+    document.getElementById("mensaje").innerHTML = mensaje;
+    campo.value = "";
+  }
+
+  function iniciar() {
+    document.getElementById("boton").addEventListener("click", enviar, false);
+    nuevoJuego();
+  }
+
+  window.addEventListener("load", iniciar, false);
+</script>
+</head>
+<body>
+  <h2>9.26 Adivine el número (con intentos)</h2>
+  <form action="#">
+    <p><label>Adivine un número entre 1 y 1000: <input id="intento" type="number"></label>
+    <input id="boton" type="button" value="Enviar"></p>
+  </form>
+  <p id="mensaje"></p>
+  <p><b>¿Por qué 10 intentos son suficientes?</b> Con cada intento se elimina la mitad de los
+  números posibles: 1000 → 500 → 250 → 125 → 63 → 32 → 16 → 8 → 4 → 2 → 1. Como
+  2<sup>10</sup> = 1024 es mayor que 1000, cualquier número entre 1 y 1000 se puede
+  adivinar en 10 intentos o menos.</p>
+  <p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p>
+</body>
+</html>

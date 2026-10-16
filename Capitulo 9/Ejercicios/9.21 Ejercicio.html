@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.21: monedas.html -->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ejercicio 9.21</title>
+<style>body{font-family:Arial,sans-serif;max-width:700px;margin:30px auto;padding:0 16px}</style>
+<script>
+  var caras = 0;
+  var cruces = 0;
+
+  // Devuelve true para cara y false para cruz
+  function arrojar() {
+    return Math.floor(Math.random() * 2) === 1;
+  }
+
+  function iniciar() {
+    document.getElementById("botonLanzar").addEventListener("click", function () {
+      var lado;
+      if (arrojar()) {
+        caras++;
+        lado = "Cara";
+      } else {
+        cruces++;
+        lado = "Cruz";
+      }
+      document.getElementById("resultado").innerHTML =
+        "Salió: <b>" + lado + "</b><br>Caras: " + caras + "<br>Cruces: " + cruces +
+        "<br>Total de lanzamientos: " + (caras + cruces);
+    }, false);
+  }
+
+  window.addEventListener("load", iniciar, false);
+</script>
+</head>
+<body>
+  <h2>9.21 Lanzamiento de monedas</h2>
+  <form action="#">
+    <p><input id="botonLanzar" type="button" value="Lanzar"></p>
+  </form>
+  <p id="resultado"></p>
+  <p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p>
+</body>
+</html>

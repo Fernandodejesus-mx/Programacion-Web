@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.22: multiplicar.html -->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ejercicio 9.22</title>
+<style>body{font-family:Arial,sans-serif;max-width:700px;margin:30px auto;padding:0 16px}</style>
+<script>
+  var a, b;
+
+  function nuevaPregunta() {
+    a = 1 + Math.floor(Math.random() * 9);
+    b = 1 + Math.floor(Math.random() * 9);
+    document.getElementById("pregunta").innerHTML = "¿Cuánto es " + a + " por " + b + "?";
+    document.getElementById("respuesta").value = "";
+  }
+
+  function verificar() {
+    var respuesta = parseInt(document.getElementById("respuesta").value);
+    if (respuesta === a * b) {
+      document.getElementById("mensaje").innerHTML = "Muy bien";
+      nuevaPregunta();
+    } else {
+      document.getElementById("mensaje").innerHTML = "No. Intente de nuevo.";
+      document.getElementById("respuesta").value = "";
+    }
+  }
+
+  function iniciar() {
+    document.getElementById("boton").addEventListener("click", verificar, false);
+    nuevaPregunta();
+  }
+
+  window.addEventListener("load", iniciar, false);
+</script>
+</head>
+<body>
+  <h2>9.22 Aprender a multiplicar</h2>
+  <p id="pregunta"></p>
+  <form action="#">
+    <p><input id="respuesta" type="number">
+    <input id="boton" type="button" value="Responder"></p>
+  </form>
+  <p id="mensaje"></p>
+  <p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p>
+</body>
+</html>

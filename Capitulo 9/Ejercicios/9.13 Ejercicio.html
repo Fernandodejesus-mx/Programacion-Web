@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.13: potencia.html -->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ejercicio 9.13</title>
+<style>body{font-family:Arial,sans-serif;max-width:700px;margin:30px auto;padding:0 16px}</style>
+<script>
+  function iniciar() {
+    document.getElementById("botonCalcular").addEventListener("click", mostrarPotencia, false);
+  }
+
+  function mostrarPotencia() {
+    var base = parseInt(document.getElementById("campoBase").value);
+    var exponente = parseInt(document.getElementById("campoExponente").value);
+
+    document.getElementById("resultado").innerHTML =
+      base + " elevado a la " + exponente + " = " + potenciaEntera(base, exponente);
+  }
+
+  function potenciaEntera(base, exponente) {
+    var resultado = 1;
+    for (var i = 1; i <= exponente; i++) {
+      resultado *= base;
+    }
+    return resultado;
+  }
+
+  window.addEventListener("load", iniciar, false);
+</script>
+</head>
+<body>
+  <h2>9.13 Potencia entera</h2>
+  <form action="#">
+    <p><label>Base: <input id="campoBase" type="text"></label></p>
+    <p><label>Exponente: <input id="campoExponente" type="text"></label></p>
+    <p><input id="botonCalcular" type="button" value="Calcular"></p>
+  </form>
+  <p id="resultado"></p>
+  <p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p>
+</body>
+</html>
