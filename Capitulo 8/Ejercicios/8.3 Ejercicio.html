@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 8.3 - Encuentre el error</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 15px;
+            line-height: 1.5
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 6px;
+            overflow-x: auto
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicio 8.3 - Encuentre el error</h1>
+
+    <h3>a)</h3>
+    <p><b>Error:</b> hay un punto y coma después de la condición del <code>while</code> y falta la llave de apertura
+        <code>{</code>. El <code>;</code> deja el cuerpo del ciclo vacío, por lo que <code>x</code> nunca cambia y el
+        ciclo es infinito.</p>
+    <p><b>Corrección:</b></p>
+    <pre>x = 1;
+while ( x &lt;= 10 )
+{
+   ++x;
+}</pre>
+
+    <h3>b)</h3>
+    <p><b>Error:</b> falta <code>break</code> en el <code>case 1</code>. Si <code>n</code> es 1, se imprime "El número
+        es 1" y la ejecución continúa en el <code>case 2</code>, imprimiendo también "El número es 2".</p>
+    <p><b>Corrección:</b></p>
+    <pre>switch ( n )
+{
+   case 1:
+      document.writeln( "El n&amp;uacute;mero es 1" );
+      break;
+   case 2:
+      document.writeln( "El n&amp;uacute;mero es 2" );
+      break;
+   default:
+      document.writeln( "El n&amp;uacute;mero no es 1 ni 2" );
+      break;
+}</pre>
+
+    <h3>c)</h3>
+    <p><b>Error:</b> la condición <code>n &lt; 10</code> termina el ciclo cuando <code>n</code> vale 10, así que solo se
+        imprimen los valores del 1 al 9. Para incluir el 10 se debe usar el operador <code>&lt;=</code>.</p>
+    <p><b>Corrección:</b></p>
+    <pre>n = 1;
+while ( n &lt;= 10 )
+   document.writeln( n++ );</pre>
+   <p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p>
+</body>
+
+</html>

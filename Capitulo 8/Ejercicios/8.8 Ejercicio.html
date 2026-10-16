@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 8.8 - Interés compuesto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #999;
+            padding: 4px 12px;
+        }
+
+        td.num {
+            text-align: right;
+        }
+    </style>
+    <script>
+        var monto, capital = 1000.00, tasaPorcentaje, tasa, anio;
+
+        // una tabla distinta para cada tasa de interés (5% a 10%)
+        for (tasaPorcentaje = 5; tasaPorcentaje <= 10; tasaPorcentaje++) {
+            tasa = tasaPorcentaje / 100;
+
+            document.writeln("<h2>Tasa de interés: " + tasaPorcentaje + "%</h2>");
+            document.writeln("<table>");
+            document.writeln("<tr><th>Año</th><th>Cantidad en depósito</th></tr>");
+
+            for (anio = 1; anio <= 10; anio++) {
+                monto = capital * Math.pow(1.0 + tasa, anio);
+                document.writeln("<tr><td>" + anio + "</td><td class='num'>$" + monto.toFixed(2) + "</td></tr>");
+            }
+
+            document.writeln("</table>");
+        }
+    </script>
+</head>
+
+<body><p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p></body>
+
+</html>

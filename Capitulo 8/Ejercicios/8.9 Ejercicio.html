@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 8.9 - Gráfico de barras</title>
+    <style>
+        body {
+            font-family: monospace;
+            font-size: 18px;
+            margin: 20px;
+        }
+    </style>
+    <script>
+        var cuenta, asteriscos, valor, linea;
+
+        document.writeln("<h1>Gráfico de barras</h1>");
+
+        for (cuenta = 1; cuenta <= 5; cuenta++) {
+            valor = parseInt(window.prompt("Introduzca el número " + cuenta + " (entre 1 y 30)", "1"));
+
+            if (valor >= 1 && valor <= 30) {
+                linea = "";
+
+                for (asteriscos = 1; asteriscos <= valor; asteriscos++)
+                    linea += "*";
+
+                document.writeln("<p>" + linea + "</p>");
+            }
+            else
+                document.writeln("<p>El número " + valor + " no está entre 1 y 30</p>");
+        }
+    </script>
+</head>
+
+<body><p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p></body>
+
+</html>

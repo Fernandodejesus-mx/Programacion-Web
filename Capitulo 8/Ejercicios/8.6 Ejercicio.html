@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 8.6 - Menor de varios enteros</title>
+    <script>
+        var cantidad, cuenta, valorCadena, valor, menor;
+
+        // el primer valor leído indica cuántos enteros se introducirán
+        cantidad = parseInt(window.prompt("¿Cuántos valores va a introducir?", "3"));
+
+        if (cantidad >= 1) {
+            for (cuenta = 1; cuenta <= cantidad; cuenta++) {
+                valorCadena = window.prompt("Introduzca el entero no negativo " + cuenta + " de " + cantidad, "0");
+                valor = parseInt(valorCadena);
+
+                if (cuenta == 1)
+                    menor = valor;
+                else if (valor < menor)
+                    menor = valor;
+            }
+
+            document.writeln("<h1>El menor de los valores es " + menor + "</h1>");
+        }
+        else
+            document.writeln("<h1>La cantidad de valores debe ser al menos 1</h1>");
+    </script>
+</head>
+
+<body><p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p></body>
+
+</html>
