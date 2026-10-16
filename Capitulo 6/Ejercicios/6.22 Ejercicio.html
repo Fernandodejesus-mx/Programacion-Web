@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 6.22 - Múltiplo</title>
+    <script>
+        var valor1, valor2, primero, segundo;
+
+        valor1 = window.prompt("Introduzca el primer entero", "0");
+        valor2 = window.prompt("Introduzca el segundo entero", "1");
+
+        primero = parseInt(valor1);
+        segundo = parseInt(valor2);
+
+        if (segundo == 0)
+            document.writeln("<h1>El segundo número no puede ser cero</h1>");
+
+        if (segundo != 0 && primero % segundo == 0)
+            document.writeln("<h1>" + primero + " es múltiplo de " + segundo + "</h1>");
+
+        if (segundo != 0 && primero % segundo != 0)
+            document.writeln("<h1>" + primero + " no es múltiplo de " + segundo + "</h1>");
+    </script>
+</head>
+
+<body><p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p></body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 6.13 - Ecuación y = ax³ + 7</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 15px;
+            line-height: 1.5
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 6px;
+            overflow-x: auto
+        }
+
+        code {
+            background: #f4f4f4
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicio 6.13 - Ecuación y = ax³ + 7</h1>
+
+    <p>Son correctas:</p>
+    <ul>
+        <li><b>a)</b> <code>y = a * x * x * x + 7;</code></li>
+        <li><b>d)</b> <code>y = ( a * x ) * x * x + 7;</code></li>
+        <li><b>e)</b> <code>y = a * ( x * x * x ) + 7;</code></li>
+    </ul>
+    <p>Son incorrectas:</p>
+    <ul>
+        <li><b>b)</b> <code>y = a * x * x * ( x + 7 );</code> — calcula ax³ + 7ax², porque el 7 se suma dentro del
+            paréntesis antes de multiplicar.</li>
+        <li><b>c)</b> <code>y = ( a * x ) * x * ( x + 7 );</code> — mismo error que en b).</li>
+        <li><b>f)</b> <code>y = a * x * ( x * x + 7 );</code> — calcula ax³ + 7ax, porque el 7 queda multiplicado por a
+            y x.</li>
+    </ul>
+    <p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p>
+</body>
+
+</html>

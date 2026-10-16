@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 6.19 - Círculo</title>
+    <script>
+        var radioCadena, radio, diametro, circunferencia, area;
+
+        radioCadena = window.prompt("Introduzca el radio del círculo", "0");
+        radio = parseFloat(radioCadena);
+
+        diametro = 2 * radio;
+        circunferencia = 2 * Math.PI * radio;
+        area = Math.PI * radio * radio;
+
+        document.writeln("<h1>Círculo de radio " + radio + "</h1>");
+        document.writeln("<p>Diámetro: " + diametro + "</p>");
+        document.writeln("<p>Circunferencia: " + circunferencia + "</p>");
+        document.writeln("<p>Área: " + area + "</p>");
+    </script>
+</head>
+
+<body><p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p></body>
+
+</html>

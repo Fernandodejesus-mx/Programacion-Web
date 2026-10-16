@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 6.18 - Tres enteros</title>
+    <script>
+        var valor1, valor2, valor3, x, y, z;
+        var suma, promedio, producto, menor, mayor;
+
+        valor1 = window.prompt("Introduzca el primer entero", "0");
+        valor2 = window.prompt("Introduzca el segundo entero", "0");
+        valor3 = window.prompt("Introduzca el tercer entero", "0");
+
+        x = parseInt(valor1);
+        y = parseInt(valor2);
+        z = parseInt(valor3);
+
+        suma = x + y + z;
+        promedio = suma / 3;
+        producto = x * y * z;
+
+        menor = x;
+        if (y < menor)
+            menor = y;
+        if (z < menor)
+            menor = z;
+
+        mayor = x;
+        if (y > mayor)
+            mayor = y;
+        if (z > mayor)
+            mayor = z;
+
+        window.alert("Suma: " + suma +
+            "\nPromedio: " + promedio +
+            "\nProducto: " + producto +
+            "\nMenor: " + menor +
+            "\nMayor: " + mayor);
+    </script>
+</head>
+
+<body>
+    <p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p>
+</body>
+
+</html>

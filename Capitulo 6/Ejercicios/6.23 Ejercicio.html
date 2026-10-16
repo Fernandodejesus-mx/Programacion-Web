@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 6.23 - Negativos, positivos y ceros</title>
+    <script>
+        var v1, v2, v3, n1, n2, n3;
+        var negativos = 0, positivos = 0, ceros = 0;
+
+        v1 = window.prompt("Introduzca el primer número", "0");
+        v2 = window.prompt("Introduzca el segundo número", "0");
+        v3 = window.prompt("Introduzca el tercer número", "0");
+
+        n1 = parseFloat(v1);
+        n2 = parseFloat(v2);
+        n3 = parseFloat(v3);
+
+        if (n1 < 0)
+            negativos = negativos + 1;
+        if (n1 > 0)
+            positivos = positivos + 1;
+        if (n1 == 0)
+            ceros = ceros + 1;
+
+        if (n2 < 0)
+            negativos = negativos + 1;
+        if (n2 > 0)
+            positivos = positivos + 1;
+        if (n2 == 0)
+            ceros = ceros + 1;
+
+        if (n3 < 0)
+            negativos = negativos + 1;
+        if (n3 > 0)
+            positivos = positivos + 1;
+        if (n3 == 0)
+            ceros = ceros + 1;
+
+        document.writeln("<h1>Resultados</h1>");
+        document.writeln("<p>Números negativos: " + negativos + "</p>");
+        document.writeln("<p>Números positivos: " + positivos + "</p>");
+        document.writeln("<p>Ceros: " + ceros + "</p>");
+    </script>
+</head>
+
+<body><p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p></body>
+
+</html>

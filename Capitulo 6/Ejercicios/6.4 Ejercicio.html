@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 6.4 - Identifique y corrija errores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 15px;
+            line-height: 1.5
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 6px;
+            overflow-x: auto
+        }
+
+        code {
+            background: #f4f4f4
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicio 6.4 - Identifique y corrija errores</h1>
+
+    <h3>a)</h3>
+    <pre>if ( c &lt; 7 );
+   window.alert( "c es menor que 7" );</pre>
+    <p><b>Error:</b> hay un punto y coma después de la condición, lo que deja vacío el cuerpo del <code>if</code> (el
+        alert se ejecutaría siempre).</p>
+    <p><b>Corrección:</b></p>
+    <pre>if ( c &lt; 7 )
+   window.alert( "c es menor que 7" );</pre>
+    <h3>b)</h3>
+    <pre>if ( c =&gt; 7 )
+   window.alert( "c es igual o mayor que 7" );</pre>
+    <p><b>Error:</b> el operador <code>=&gt;</code> no es un operador relacional; el correcto es <code>&gt;=</code>.</p>
+    <p><b>Corrección:</b></p>
+    <pre>if ( c &gt;= 7 )
+   window.alert( "c es igual o mayor que 7" );</pre>
+   <p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p>
+</body>
+
+</html>
