@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 10.16</title>
+</head>
+<body>
+    <h1>10.16 La criba de Eratóstenes</h1>
+    <p>Números primos entre 1 y 999:</p>
+    <pre id="salida"></pre>
+
+    <script>
+        // a) Arreglo de 1000 elementos, todos inicializados en 1 (true)
+        var primos = new Array( 1000 );
+
+        for ( var i = 0; i < primos.length; ++i )
+        {
+            primos[ i ] = 1;
+        }
+
+        // b) 0 y 1 no son primos
+        primos[ 0 ] = 0;
+        primos[ 1 ] = 0;
+
+        // Desde el índice 2, si el elemento vale 1, poner en 0 todos sus múltiplos
+        for ( var i = 2; i < primos.length; ++i )
+        {
+            if ( primos[ i ] == 1 )
+            {
+                for ( var j = i + i; j < primos.length; j += i )
+                {
+                    primos[ j ] = 0;
+                }
+            }
+        }
+
+        // Los índices que siguen valiendo 1 son los números primos
+        var lista = "";
+        var cantidad = 0;
+
+        for ( var i = 1; i < primos.length; ++i )   // se ignora el elemento 0
+        {
+            if ( primos[ i ] == 1 )
+            {
+                lista += i + " ";
+                ++cantidad;
+
+                if ( cantidad % 15 == 0 )
+                {
+                    lista += "\n";
+                }
+            }
+        }
+
+        document.getElementById( "salida" ).textContent =
+            lista + "\n\nTotal de primos encontrados: " + cantidad;
+    </script>
+</body>
+</html>

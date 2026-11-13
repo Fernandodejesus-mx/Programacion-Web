@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 10.4</title>
+</head>
+<body>
+    <h1>10.4 Arreglo bidimensional tabla</h1>
+    <pre id="salida"></pre>
+
+    <script>
+        var salida = document.getElementById( "salida" );
+
+        // a) Declarar y crear el arreglo con tres filas y tres columnas
+        var tabla = new Array( new Array( 3 ), new Array( 3 ),
+                               new Array( 3 ) );
+
+        // b) Almacenar el número total de elementos
+        var totalElementos = tabla.length * tabla[ 0 ].length;
+        salida.textContent += "b) totalElementos = " + totalElementos + "\n\n";
+
+        // c) Inicializar cada elemento con la suma de sus índices de fila y columna
+        for ( var x in tabla )
+        {
+            for ( var y in tabla[ x ] )
+            {
+                // for...in devuelve los índices como cadenas,
+                // por eso se convierten a número antes de sumar
+                tabla[ x ][ y ] = Number( x ) + Number( y );
+            }
+        }
+
+        salida.textContent += "c) Contenido de la tabla:\n";
+        for ( var fila = 0; fila < tabla.length; ++fila )
+        {
+            salida.textContent += tabla[ fila ].join( "  " ) + "\n";
+        }
+    </script>
+</body>
+</html>

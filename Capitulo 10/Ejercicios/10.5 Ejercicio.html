@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 10.5</title>
+</head>
+<body>
+    <h1>10.5 Encuentre los errores y corríjalos</h1>
+    <pre id="salida"></pre>
+
+    <script>
+        var salida = document.getElementById( "salida" );
+
+        // ---------- a) ----------
+        // CÓDIGO CON ERROR:
+        //   var b = new Array( 10 );
+        //   var longitud = b.length;
+        //   for ( var i = 0; i <= longitud; ++i )
+        //   {
+        //       b[ i ] = 1;
+        //   }
+        //
+        // ERROR: se hace referencia a un elemento fuera de los límites
+        // del arreglo (b[ 10 ]). Es un error lógico, no sintáctico.
+        // CORRECCIÓN: cambiar el operador <= por <
+
+        var b = new Array( 10 );
+        var longitud = b.length;
+
+        for ( var i = 0; i < longitud; ++i )
+        {
+            b[ i ] = 1;
+        }
+
+        salida.textContent += "a) b = " + b + "\n";
+
+        // ---------- b) ----------
+        // CÓDIGO CON ERROR (reconstruido, ajústalo al de tu libro):
+        //   var a = [ [ 1, 2 ], [ 3, 4 ] ];
+        //   a[ 1, 1 ] = 5;
+        //
+        // ERROR: el indexado del arreglo se hace de manera incorrecta.
+        // a[ 1, 1 ] usa el operador coma, no dos índices.
+        // CORRECCIÓN: a[ 1 ][ 1 ] = 5;
+
+        var a = [ [ 1, 2 ], [ 3, 4 ] ];
+        a[ 1 ][ 1 ] = 5;
+
+        salida.textContent += "b) a = " + JSON.stringify( a ) + "\n";
+    </script>
+</body>
+</html>

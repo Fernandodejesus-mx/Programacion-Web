@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 10.11</title>
+</head>
+<body>
+    <h1>10.11 Operaciones con arreglos unidimensionales</h1>
+    <pre id="salida"></pre>
+
+    <script>
+        var salida = document.getElementById( "salida" );
+
+        // a) Establecer los 10 elementos del arreglo cuentas en ceros
+        var cuentas = new Array( 10 );
+
+        for ( var i = 0; i < cuentas.length; ++i )
+        {
+            cuentas[ i ] = 0;
+        }
+
+        salida.textContent += "a) cuentas = " + cuentas + "\n\n";
+
+        // b) Sumar 1 a cada uno de los 15 elementos del arreglo bono
+        var bono = new Array( 15 );
+
+        for ( var i = 0; i < bono.length; ++i )
+        {
+            bono[ i ] = i * 10;   // datos de ejemplo
+        }
+
+        salida.textContent += "b) antes:   " + bono + "\n";
+
+        for ( var i = 0; i < bono.length; ++i )
+        {
+            bono[ i ] += 1;
+        }
+
+        salida.textContent += "   después: " + bono + "\n\n";
+
+        // c) Mostrar los cinco valores del arreglo mejoresPuntuaciones, separados por espacios
+        var mejoresPuntuaciones = [ 98, 95, 91, 88, 85 ];   // datos de ejemplo
+        var texto = "";
+
+        for ( var i = 0; i < mejoresPuntuaciones.length; ++i )
+        {
+            texto += mejoresPuntuaciones[ i ] + " ";
+        }
+
+        salida.textContent += "c) " + texto + "\n";
+    </script>
+</body>
+</html>

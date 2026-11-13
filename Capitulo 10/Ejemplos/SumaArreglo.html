@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<!-- Fig. 10.7 y 10.8: SumaArreglo.html (HTML y JavaScript en un solo archivo) -->
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Suma de los elementos de un arreglo</title>
+        <script>
+            // Suma de los elementos de un arreglo con for y for...in
+            function iniciar()
+            {
+                var elArreglo = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
+                var total1 = 0, total2 = 0;
+
+                // itera a través de los elementos del arreglo en orden y suma
+                // el valor de cada elemento a total1
+                var longitud = elArreglo.length;
+
+                for ( var i = 0; i < longitud; ++i )
+                {
+                    total1 += elArreglo[ i ];
+                } // fin de for
+
+                var resultados = "<p>Total usando &iacute;ndices: " + total1 + "</p>";
+
+                // itera a través de los elementos del arreglo usando for...in
+                for ( var elemento in elArreglo )
+                {
+                    total2 += elArreglo[ elemento ];
+                } // fin de for
+
+                resultados += "<p>Total usando for...in: " + total2 + "</p>";
+                document.getElementById( "salida" ).innerHTML = resultados;
+            } // fin de la función iniciar
+
+            window.addEventListener( "load", iniciar, false );
+        </script>
+    </head>
+    <body>
+        <div id = "salida"></div>
+    </body>
+</html>

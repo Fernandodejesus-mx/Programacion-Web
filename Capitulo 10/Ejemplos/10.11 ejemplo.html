@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Generador de imágenes al azar</title>
+   </head>
+   <body>
+      <img id="imagen" src="imagenes/dado1.png" alt="dado">
+
+      <script>
+         var numero = Math.floor( 1 + Math.random() * 2 );
+         document.getElementById( "imagen" ).src = "imagenes/dado" + numero + ".png";
+      </script>
+   </body>
+</html>

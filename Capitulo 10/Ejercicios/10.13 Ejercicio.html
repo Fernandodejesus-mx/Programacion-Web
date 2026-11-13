@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 10.13</title>
+</head>
+<body>
+    <h1>10.13 Orden en que se ponen en cero los elementos de ventas</h1>
+    <pre id="salida"></pre>
+
+    <script>
+        var salida = document.getElementById( "salida" );
+
+        // Arreglo bidimensional de 3 filas por 5 columnas
+        var ventas = [ [ 1, 1, 1, 1, 1 ],
+                       [ 1, 1, 1, 1, 1 ],
+                       [ 1, 1, 1, 1, 1 ] ];
+
+        // Segmento original del ejercicio, con un contador para etiquetar el orden
+        var orden = new Array( 3 );
+        var contador = 0;
+
+        for ( var fila in ventas )
+        {
+            orden[ fila ] = new Array( 5 );
+
+            for ( var col in ventas[ fila ] )
+            {
+                ventas[ fila ][ col ] = 0;
+                ++contador;
+                orden[ fila ][ col ] = contador;   // etiqueta: en qué turno se puso en cero
+            }
+        }
+
+        salida.textContent += "Orden en que se establece cada elemento en cero:\n\n";
+        salida.textContent += "          col0  col1  col2  col3  col4\n";
+
+        for ( var fila = 0; fila < orden.length; ++fila )
+        {
+            salida.textContent += "fila " + fila + "    ";
+
+            for ( var col = 0; col < orden[ fila ].length; ++col )
+            {
+                var etiqueta = String( orden[ fila ][ col ] );
+
+                // Rellenar con espacios para alinear la tabla
+                while ( etiqueta.length < 4 )
+                {
+                    etiqueta = " " + etiqueta;
+                }
+
+                salida.textContent += etiqueta + "  ";
+            }
+
+            salida.textContent += "\n";
+        }
+
+        salida.textContent += "\nContenido final de ventas: " + JSON.stringify( ventas ) + "\n";
+    </script>
+</body>
+</html>

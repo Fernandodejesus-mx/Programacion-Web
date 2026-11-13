@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<!-- Fig. 10.12: ImagenAleatoria2.html -->
+<!-- Selección de imágenes al azar usando arreglos -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Generador de im&aacute;genes al azar</title>
+   </head>
+   <body>
+      <img id = "imagen" src = "imagenes/dado1.png" alt = "dado con 1 punto(s)">
+
+      <script>
+         var imgIcono;
+         var imagenes = [ "dado1", "dado2" ];
+         var descripciones = [ "dado con 1 punto(s)", "dado con 2 punto(s)" ];
+
+         // elegir una imagen al azar y su descripción correspondiente, después modificar
+         // el elemento img en el cuerpo del documento
+         function elegirImagen()
+         {
+            var indice = Math.floor( Math.random() * imagenes.length );
+            imgIcono.setAttribute( "src", "imagenes/" + imagenes[ indice ] + ".png" );
+            imgIcono.setAttribute( "alt", descripciones[ indice ] );
+         } // fin de la función elegirImagen
+
+         // registra el manejador de eventos de clic de imgIcono
+         function iniciar()
+         {
+            imgIcono = document.getElementById( "imagen" );
+            imgIcono.addEventListener( "click", elegirImagen, false );
+         } // fin de la función iniciar
+
+         window.addEventListener( "load", iniciar, false );
+      </script>
+   </body>
+</html>
